@@ -62,6 +62,9 @@ after an automatic start, launch it once from your terminal
 | ACT10          | Unbound; bind your dictation hotkey                       |
 | ACT12          | Send Enter to Herdr's focused pane (submit), not globally |
 
+The key-map popup fits the available terminal size, retaining the physical
+key arrangement where possible and using a compact list in small panes.
+
 Every control except the six Agent Keys is remappable through the config:
 ask your agent to read [CONFIGURING.md](CONFIGURING.md) to customize keys or
 create a configuration for any mapping you want. Config edits apply
@@ -69,11 +72,13 @@ instantly, no restart.
 
 The default order is workspaces, agents, then scroll; set `dial_mode_order` to
 change both the startup mode and click order. The ring is off in workspace
-mode, blue in agent mode, and purple in scroll mode. In scroll mode, turn
+mode, blue in agent mode, and orange in scroll mode. In scroll mode, turn
 counter-clockwise to scroll up and clockwise to scroll down. When
 Ghostty/Herdr is frontmost it targets Herdr's keyboard-focused pane regardless
 of its initial pointer position; Ghostty requires moving the pointer to that
-pane before it will route the wheel gesture there. In other apps it scrolls
+pane before it will route the wheel gesture there. Herdr may set
+`TERM_PROGRAM=herdr`; the plugin also recognizes Ghostty's inherited host
+markers in that environment. In other apps it scrolls
 beneath the pointer like a normal wheel. Set `scroll_steps` from 1 to 12 in the
 plugin config to tune how much each detent moves; changes apply live. See
 [CONFIGURING.md](CONFIGURING.md) for details. With scroll work still buffered,
